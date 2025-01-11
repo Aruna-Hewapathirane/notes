@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazarus Pascal Keywords</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-pascal.min.js"></script>
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="mb-4 text-center">Lazarus Pascal Keywords and Examples</h1>
+
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h2 class="card-title">Program Structure</h2>
+            </div>
+            <div class="card-body">
+                <h3>Program</h3>
+                <pre><code class="language-pascal">program HelloWorld;
+begin
+  Writeln('Hello, World!');
+end.</code></pre>
+
+                <h3>Uses</h3>
+                <pre><code class="language-pascal">uses
+  SysUtils;
+begin
+  Writeln(FormatDateTime('yyyy-mm-dd', Now));
+end.</code></pre>
+
+                <h3>Unit</h3>
+                <pre><code class="language-pascal">unit MyUnit;
+
+interface
+procedure SayHello;
+
+implementation
+procedure SayHello;
+begin
+  Writeln('Hello from MyUnit!');
+end;
+
+end.</code></pre>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-secondary text-white">
+                <h2 class="card-title">Data Types</h2>
+            </div>
+            <div class="card-body">
+                <h3>Standard Types</h3>
+                <h4>Integer</h4>
+                <pre><code class="language-pascal">var
+  x: Integer;
+begin
+  x := 42;
+  Writeln(x);
+end.</code></pre>
+
+                <h4>Real</h4>
+                <pre><code class="language-pascal">var
+  y: Real;
+begin
+  y := 3.14;
+  Writeln(y);
+end.</code></pre>
+
+                <h4>Char</h4>
+                <pre><code class="language-pascal">var
+  ch: Char;
+begin
+  ch := 'A';
+  Writeln(ch);
+end.</code></pre>
+
+                <h4>String</h4>
+                <pre><code class="language-pascal">var
+  str: String;
+begin
+  str := 'Hello, Lazarus!';
+  Writeln(str);
+end.</code></pre>
+
+                <h3>Advanced Types</h3>
+                <h4>Boolean</h4>
+                <pre><code class="language-pascal">var
+  b: Boolean;
+begin
+  b := True;
+  Writeln(b);
+end.</code></pre>
+
+                <h4>Byte</h4>
+                <pre><code class="language-pascal">var
+  b: Byte;
+begin
+  b := 255;
+  Writeln(b);
+end.</code></pre>
+
+                <h4>Word</h4>
+                <pre><code class="language-pascal">var
+  w: Word;
+begin
+  w := 65535;
+  Writeln(w);
+end.</code></pre>
+
+                <h4>Cardinal</h4>
+                <pre><code class="language-pascal">var
+  c: Cardinal;
+begin
+  c := 4294967295;
+  Writeln(c);
+end.</code></pre>
+
+                <h4>SmallInt</h4>
+                <pre><code class="language-pascal">var
+  si: SmallInt;
+begin
+  si := -32768;
+  Writeln(si);
+end.</code></pre>
+
+                <h4>LongInt</h4>
+                <pre><code class="language-pascal">var
+  li: LongInt;
+begin
+  li := 2147483647;
+  Writeln(li);
+end.</code></pre>
+
+                <h4>Int64</h4>
+                <pre><code class="language-pascal">var
+  i64: Int64;
+begin
+  i64 := 9223372036854775807;
+  Writeln(i64);
+end.</code></pre>
+
+                <h4>Single</h4>
+                <pre><code class="language-pascal">var
+  s: Single;
+begin
+  s := 1.5E-4;
+  Writeln(s);
+end.</code></pre>
+
+                <h4>Double</h4>
+                <pre><code class="language-pascal">var
+  d: Double;
+begin
+  d := 3.14159;
+  Writeln(d);
+end.</code></pre>
+
+                <h4>Extended</h4>
+                <pre><code class="language-pascal">var
+  e: Extended;
+begin
+  e := 1.23456789E+4000;
+  Writeln(e);
+end.</code></pre>
+
+                <h4>Comp</h4>
+                <pre><code class="language-pascal">var
+  compVar: Comp;
+begin
+  compVar := 123456789.123456789;
+  Writeln(compVar);
+end.</code></pre>
+
+                <h4>Currency</h4>
+                <pre><code class="language-pascal">var
+  cur: Currency;
+begin
+  cur := 19.99;
+  Writeln(cur);
+end.</code></pre>
+
+                <h4>Set</h4>
+                <pre><code class="language-pascal">type
+  TDays = set of (Mon, Tue, Wed, Thu, Fri, Sat, Sun);
+var
+  WorkDays: TDays;
+begin
+  WorkDays := [Mon, Tue, Wed, Thu, Fri];
+  if Mon in WorkDays then
+    Writeln('Monday is a workday.');
+end.</code></pre>
+
+                <h4>Record</h4>
+                <pre><code class="language-pascal">type
+  TPoint = record
+    X, Y: Integer;
+  end;
+var
+  p: TPoint;
+begin
+  p.X := 10;
+  p.Y := 20;
+  Writeln('X: ', p.X, ', Y: ', p.Y);
+end.</code></pre>
+
+                <h4>Array</h4>
+                <pre><code class="language-pascal">var
+  arr: array[1..5] of Integer;
+begin
+  arr[1] := 10;
+  arr[2] := 20;
+  Writeln(arr[1], ', ', arr[2]);
+end.</code></pre>
+
+                <h4>Pointer</h4>
+                <pre><code class="language-pascal">var
+  p: ^Integer;
+begin
+  New(p);
+  p^ := 42;
+  Writeln(p^);
+  Dispose(p);
+end.</code></pre>
+
+                <h4>Variant</h4>
+                <pre><code class="language-pascal">var
+  v: Variant;
+begin
+  v := 123;
+  Writeln(v);
+  v := 'Hello';
+  Writeln(v);
+end.</code></pre>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-success text-white">
+                <h2 class="card-title">Control Structures</h2>
+            </div>
+            <div class="card-body">
+                <h3>If, Then, Else</h3>
+                <pre><code class="language-pascal">var
+  x: Integer;
+begin
+  x := 10;
+  if x > 5 then
+    Writeln('x is greater than 5')
+  else
+    Writeln('x is 5 or less');
+end.</code></pre>
+
+                <h3>Case</h3>
+                <pre><code class="language-pascal">var
+  ch: Char;
+begin
+  ch := 'A';
+  case ch of
+    'A': Writeln('It''s A');
+    'B': Writeln('It''s B');
+  else
+    Writeln('Unknown');
+  end;
+end.</code></pre>
+
+                <h3>For Loop</h3>
+                <pre><code class="language-pascal">var
+  i: Integer;
+begin
+  for i := 1 to 5 do
+    Writeln(i);
+end.</code></pre>
+
+                <h3>While Loop</h3>
+                <pre><code class="language-pascal">var
+  x: Integer;
+begin
+  x := 0;
+  while x < 5 do
+  begin
+    Inc(x);
+    Writeln(x);
+  end;
+end.</code></pre>
+
+                <h3>Repeat, Until</h3>
+                <pre><code class="language-pascal">var
+  x: Integer;
+begin
+  x := 0;
+  repeat
+    Inc(x);
+    Writeln(x);
+  until x = 5;
+end.</code></pre>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+                <h2 class="card-title">Procedures and Functions</h2>
+            </div>
+            <div class="card-body">
+                <h3>Procedure</h3>
+                <pre><code class="language-pascal">procedure SayHello;
+begin
+  Writeln('Hello!');
+end;
+
+begin
+  SayHello;
+end.</code></pre>
+
+                <h3>Function</h3>
+                <pre><code class="language-pascal">function Add(a, b: Integer): Integer;
+begin
+  Result := a + b;
+end;
+
+begin
+  Writeln(Add(10, 20));
+end.</code></pre>
+            </div>
+        </div>
+        
+        
+           <div class="card mb-4">
+            <div class="card-header bg-warning text-dark">
+                <h2 class="card-title">OOP Keywords</h2>
+            </div>
+            <div class="card-body">
+                <h3>Class</h3>
+                <pre><code class="language-pascal">type
+  TPerson = class
+    Name: String;
+    procedure Greet;
+  end;
+
+procedure TPerson.Greet;
+begin
+  Writeln('Hello, ', Name);
+end;
+
+var
+  p: TPerson;
+begin
+  p := TPerson.Create;
+  p.Name := 'Lazarus';
+  p.Greet;
+  p.Free;
+end.</code></pre>
+
+                <h3>Constructor, Destructor</h3>
+                <pre><code class="language-pascal">type
+  TMyClass = class
+    constructor Create;
+    destructor Destroy; override;
+  end;
+
+constructor TMyClass.Create;
+begin
+  Writeln('Created');
+end;
+
+destructor TMyClass.Destroy;
+begin
+  Writeln('Destroyed');
+  inherited Destroy;
+end;
+
+var
+  obj: TMyClass;
+begin
+  obj := TMyClass.Create;
+  obj.Free;
+end.</code></pre>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-danger text-white">
+                <h2 class="card-title">Memory Management</h2>
+            </div>
+            <div class="card-body">
+                <h3>New, Dispose</h3>
+                <pre><code class="language-pascal">type
+  PInt = ^Integer;
+var
+  p: PInt;
+begin
+  New(p);
+  p^ := 42;
+  Writeln(p^);
+  Dispose(p);
+end.</code></pre>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-dark text-white">
+                <h2 class="card-title">Miscellaneous</h2>
+            </div>
+            <div class="card-body">
+                <h3>With</h3>
+                <pre><code class="language-pascal">type
+  TPoint = record
+    X, Y: Integer;
+  end;
+
+var
+  p: TPoint;
+begin
+  p.X := 10;
+  p.Y := 20;
+  with p do
+    Writeln('X: ', X, ', Y: ', Y);
+end.</code></pre>
+
+                <h3>Goto</h3>
+                <pre><code class="language-pascal">label
+  MyLabel;
+var
+  x: Integer;
+begin
+  x := 0;
+  MyLabel:
+    Writeln(x);
+    Inc(x);
+    if x < 5 then
+      goto MyLabel;
+end.</code></pre>
+
+                <h3>Try, Except</h3>
+                <pre><code class="language-pascal">begin
+  try
+    Writeln(10 div 0);
+  except
+    on E: Exception do
+      Writeln('Error: ', E.Message);
+  end;
+end.</code></pre>
+
+                <h3>Try, Finally</h3>
+                <pre><code class="language-pascal">var
+  f: TextFile;
+begin
+  AssignFile(f, 'example.txt');
+  try
+    Rewrite(f);
+    Writeln(f, 'Hello, Lazarus!');
+  finally
+    CloseFile(f);
+  end;
+end.</code></pre>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+</body>
+</html>
+
+    
+    
+    
